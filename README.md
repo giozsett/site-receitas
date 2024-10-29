@@ -10,6 +10,7 @@
         --> peso atual;
         --> meta (ganhar massa, perder peso, etc);
 
+
     + Sugestões de treino
     
     + Tela para o usuário customizar seu treino
