@@ -179,8 +179,8 @@ article {
 }
 
 .wrapper1 td {
-    height: 50px;
-    padding: 10px;
+    height: 40px;
+    padding: 5px;
 }
 
 .w1-result {
@@ -225,18 +225,6 @@ article {
     margin: 0px 0px 10px 0px;
 }
 
-.btn-enviar {
-    width: inherit;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.btn-enviar input[type="submit"] {
-    padding: 5px;
-}
-
 .wrapper3 {
     width: 250px;
     background-color: rgb(118, 217, 209, 0.25);
@@ -251,9 +239,39 @@ article {
     font-family: 'Jost';
 }
 
+.wrapper3 td {
+    height: 40px;
+    padding: 5px;
+}
+
 .w3-result {
     width: 50px;
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.5);
+}
+
+.btn-enviar {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-enviar input[type="submit"] {
+    padding: 10px 15px;
+    transition: all 0.4s linear;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px rgb(0, 0, 0, 0.6);
+    font-family: 'Jost';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-enviar input[type="submit"]:hover {
+    padding: 12px 18px;
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
+    background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
 }
