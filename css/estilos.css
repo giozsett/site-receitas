@@ -134,14 +134,14 @@ article {
 }
 
 .imagem {
-    margin: 20px 0px;
+    margin: 15px 0px 10px 0px;
     width: 25%;
 }
 
 .imagem img {
     background-size: cover;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
     border-radius: 25px;
 }
 
