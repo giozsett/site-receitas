@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+
 @font-face {
     font-family: 'Social Media';
     src: url('https://cdn.jsdelivr.net/gh/giozsett/FONTS@main/TypeIcons-rXq8.ttf')
@@ -95,7 +97,7 @@ body {
 /* HOME */
 main {
     width: 100%;
-    margin: 10px;
+    margin: 10px 10px 40px 10px;
     border-radius: 10px;
     background-color: rgba(46, 46, 46, 0.65);
     padding: 20px 30px;
@@ -159,10 +161,11 @@ article {
     text-align: center;
     font-family: 'Anton';
     letter-spacing: 2px;
+    margin-bottom: 40px;
 }
 
 .wrapper1 {
-    width: 260px;
+    width: 270px;
     background-color: rgb(59, 213, 218, 0.25);
     padding: 10px;
     border-radius: 5px;
@@ -175,9 +178,82 @@ article {
     font-family: 'Jost';
 }
 
+.wrapper1 td {
+    height: 50px;
+    padding: 10px;
+}
+
+.w1-result {
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
 .wrapper2 {
     width: 400px;
-    background-color: rgb(59, 213, 218, 0.25);
+    background-color: rgba(221, 243, 244, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.w2-labels {
+    width: inherit;
+}
+
+.wrapper2 input[type="number"] {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: none;
+    margin: 5px 0px 10px;
+}
+
+.wrapper2 input[type="date"] {
+    width: 140px;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: none;
+    margin: 0px 0px 10px 0px;
+}
+
+.btn-enviar {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-enviar input[type="submit"] {
+    padding: 5px;
+}
+
+.wrapper3 {
+    width: 250px;
+    background-color: rgb(118, 217, 209, 0.25);
     padding: 10px;
     border-radius: 5px;
+}
+
+.wrapper3 h3 {
+    font-size: 20px;
+    width: inherit;
+    text-align: center;
+    font-family: 'Jost';
+}
+
+.w3-result {
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.5);
 }

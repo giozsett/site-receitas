@@ -15,23 +15,31 @@
 
             <form action="" method="get">
                 <div class="wrapper1">
-                    <h3>Último mês</h3>
+                    <h3>Diferença do último mês</h3>
                     <table>
                         <tr>
                             <td>Peso (kg): </td>
-                            <td> </td>
+                                <td>
+                                    <div class="w1-result"></div>
+                                </td>
                         </tr>
                         <tr>
                             <td>Braço (cm):</td>
-                            <td> </td>
+                            <td>
+                                <div class="w1-result"></div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Cintura (cm):</td>
-                            <td> </td>
+                            <td>
+                                <div class="w1-result"></div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Perna (cm):</td>
-                            <td> </td>
+                            <td>
+                                <div class="w1-result"></div>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -39,23 +47,72 @@
 
             <form action="" method="post">
                 <div class="wrapper2">
-                    <label for="data_atual">Data: </label>
+                    <div class="w2-labels">
+                        <label for="data_atual">Data: </label>
+                    </div>
                     <input type="date" name="data_atual" id="data_atual">
 
-                    <label for="peso_atual">Peso: (kg): </label>
+                    <div class="w2-labels">
+                        <label for="peso_atual">Peso: (kg): </label>
+                    </div>
                     <input type="number" name="peso_atual" id="peso_atual">
 
-                    <label for="braco_atual">Braço (cm): </label>
+                    <div class="w2-labels">
+                        <label for="braco_atual">Braço (cm): </label>
+                    </div>
                     <input type="number" name="braco_atual" id="braco_atual">
 
-                    <label for="cintura_atual">Cintura (cm): </label>
+                    <div class="w2-labels">
+                        <label for="cintura_atual">Cintura (cm): </label>
+                    </div>
                     <input type="number" name="cintura_atual" id="cintura_atual">
+
+                    <div class="w2-labels">
+                        <label for="perna_atual">Perna (cm): </label>
+                    </div>
+                    <input type="number" name="perna_atual" id="perna_atual">
+
+                    <div class="btn-enviar">
+                        <input type="submit" value="Enviar">
+                    </div>
                 </div>
             </form>
 
             <form action="" method="get">
-                <div>
+                <div class="wrapper3">
                     <h3>Anteriores</h3>
+
+                    <table>
+                        <tr>
+                            <td>Data: </td>
+                            <td> 
+                                <div class="w3-result"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Peso (kg): </td>
+                            <td> 
+                                <div class="w3-result"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Braço (cm):</td>
+                            <td> 
+                                <div class="w3-result"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cintura (cm):</td>
+                            <td> 
+                                <div class="w3-result"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Perna (cm):</td>
+                            <td> 
+                                <div class="w3-result"></div>
+                            </td>
+                    </table>
                 </div>
             </form>
 
