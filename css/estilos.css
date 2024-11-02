@@ -94,6 +94,7 @@ body {
 }
 
 
+
 /* HOME */
 main {
     width: 100%;
@@ -143,6 +144,7 @@ article {
     height: 250px;
     border-radius: 25px;
 }
+
 
 
 /* ATUALIZAÇÃO DE METAS */
@@ -208,7 +210,7 @@ article {
 .wrapper2 input[type="number"] {
     width: 200px;
     height: 30px;
-    padding: 5px;
+    padding: 10px;
     font-size: 16px;
     border-radius: 15px;
     border-style: none;
@@ -218,7 +220,7 @@ article {
 .wrapper2 input[type="date"] {
     width: 140px;
     height: 30px;
-    padding: 5px;
+    padding: 10px;
     font-size: 16px;
     border-radius: 15px;
     border-style: none;
@@ -274,4 +276,87 @@ article {
     padding: 12px 18px;
     box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
     background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
+    cursor: pointer;
+}
+
+
+
+/* CÁLCULO DO IMC E TMB*/
+.imc-tmb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+    font-family: 'Open Sans';
+    color: #fff;
+}
+
+.imc-tmb h1 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Anton';
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.dados-calculo {
+    width: 400px;
+    background-color: rgba(221, 243, 244, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.dados-calculo label {
+    width: inherit;
+}
+
+.dados-calculo select {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: none;
+    margin: 0px 0px 10px 0px;
+}
+
+.dados-calculo input[type="number"] {
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: none;
+    margin: 5px 0px 10px;
+}
+
+.btn-calcular {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.btn-calcular input[type="submit"] {
+    margin-top: 25px;
+    padding: 10px 15px;
+    transition: all 0.4s linear;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px rgb(0, 0, 0, 0.6);
+    font-family: 'Jost';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-calcular input[type="submit"]:hover {
+    padding: 12px 18px;
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
+    background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
+    cursor: pointer;
 }
