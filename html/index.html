@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Fit</title>
 
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
             <span class="navlinks"><a href="#" target="main">Perfil</a></span>
         </div>
     
-        <iframe src="home.html" width="98%" height="1000px" frameborder="0" name="main">
+        <iframe src="home.html" width="98%" frameborder="0" name="main" id="mainFrame" onload="ajusta_altura()">
         </iframe>
     </div>
 
@@ -34,5 +34,9 @@
         <span><a href="#"><u>i</u></a></span>
         <span><a href="#"><u>t</u></a></span>
     </footer>
+
+
+    <script src="/js/index.js">
+    </script>
 </body>
 </html>
