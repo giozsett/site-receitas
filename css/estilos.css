@@ -140,6 +140,7 @@ main h3 {
     font-family: 'Jost';
     font-weight: bold;
     color: #f5f5f5;
+    font-size: 22px;
 }
 
 article {
@@ -515,6 +516,17 @@ article {
     width: 80%;
 }
 
+/*PERFIL --> EDITAR CADASTRO*/
+.editar-cadastro {
+    padding: 20px 10px;
+}
+
+.editar-cadastro label {
+    font-family: 'Open Sans';
+    color: #fff;
+    margin: 0px 0px 0px 15px;
+}
+
 .editar-cadastro input {
     width: 200px;
     height: 30px;
@@ -529,6 +541,8 @@ article {
     width: inherit;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0px;
 }
 
 .btn-confirmar input[type="submit"] {
@@ -549,4 +563,13 @@ article {
     box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
     background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
     cursor: pointer;
+}
+
+
+/*PERFIL --> MINHA DIETA*/
+.perfil-texto {
+    font-family: 'Open Sans';
+    color: #eee;
+    text-align: justify;
+    margin: 20px 10px 10px 10px;
 }
