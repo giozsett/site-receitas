@@ -18,7 +18,7 @@ function ajustar_altura2() {
 
 // Atualiza a altura periodicamente
 setInterval(ajustar_altura, 500);
-setInterval(ajustar_altura2, 500);
+setInterval(ajustar_altura2, 300);
 
 window.addEventListener('resize', ajustar_altura);
 window.addEventListener('resize', ajustar_altura2);
