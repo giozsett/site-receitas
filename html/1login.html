@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & registro</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="wrapper">
@@ -33,6 +33,10 @@
                     <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
                     <header>Login</header>
                 </div>
+
+                <!-- Placeholder para mensagem de erro de login -->
+                {{mensagem_erro_login}}
+
                 <div class="input-box">
                     <input type="text" id="emailLogin" name="email" class="input-field" placeholder="Email" required>
                     <i class="bx bx-user"></i>
@@ -87,6 +91,6 @@
 
 
 
-<script src="../js/login-cadastro.js"></script>
+<script src="js/login-cadastro.js"></script>
 </body>
 </html>

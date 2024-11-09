@@ -67,7 +67,7 @@ function registerUser() {
     });
 }
 
-function loginUser() {
+/*function loginUser() {
     const email = document.getElementById("emailLogin").value;
     const senha = document.getElementById("senhaLogin").value;
     const mensagemErroLogin = document.getElementById("mensagemErroLogin");
@@ -94,6 +94,6 @@ function loginUser() {
         console.error("Erro ao realizar o login:", error);
         mensagemErroLogin.textContent = "Erro ao realizar o login. Tente novamente mais tarde.";
     });
-}
+}*/
 
 
