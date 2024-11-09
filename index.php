@@ -26,7 +26,12 @@
  $paginas = [
     'login' => 'php/login.php',
     'menu' => 'php/menu.php',
-    'deslogar' => 'php/deslogar.php'
+    'deslogar' => 'php/deslogar.php',
+    'metas' => 'php/metas.php',
+    'imc' => 'php/imc.php',
+    'treinos' => 'php/treinos.php',
+    'receitas' => 'php/receitas.php',
+    'perfil' => 'php/perfil.php'
  ];
 
  if (!array_key_exists($pagina, $paginas)){
