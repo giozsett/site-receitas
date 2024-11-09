@@ -27,38 +27,31 @@
     <div class="form-box">
 
         <!----------login formulario----------->
-        <form action="" method="post">
+        <form id="loginForm" method="post">
             <div class="login-container" id="login">
                 <div class="top">
-                     <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
-                     <header>Login</header>
+                    <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
+                    <header>Login</header>
                 </div>
                 <div class="input-box">
-                     <input type="text" class="input-field" placeholder="Nome de usuário ou Email">
-                     <i class="bx bx-user"></i>
-               </div>
-               <div class="input-box">
-                   <input type="password" class="input-field" placeholder="Senha">
-                   <i class="bx bx-lock-alt"></i>
-               </div>
-               <div class="input-box">
-                   <input type="submit" class="submit" value="Entrar">
-               </div>
-               <div class="two-col">
-                   <div class="onde">
-                       <input type="checkbox" id="login">
-                       <label for="register-check">Lembrar senha</label>
-                   </div>
-                   <div class="two">
-                       <label><a href="#">Esqueceu a senha ?</a></label>
-                   </div>
-               </div>
-           </div>
+                    <input type="text" id="emailLogin" name="email" class="input-field" placeholder="Email" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="senhaLogin" name="senha" class="input-field" placeholder="Senha" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="button" class="submit" value="Entrar" onclick="loginUser()">
+                </div>
+                <div id="mensagemErroLogin" style="color: red;"></div> <!-- Mensagem de erro -->
+            </div>
         </form>
+        
 
 
         <!----------registro formulario----------->
-        <form id="registerForm" method="post" action="#acao">
+        <form id="registerForm" method="post">
             <div class="register-container" id="register">
                 <div class="top">
                     <span>Possui uma conta ?<a href="#" onclick="login()">Login</a></span>
@@ -86,9 +79,9 @@
                     <input type="button" class="submit" value="Registrar" onclick="registerUser()">
                 </div>
                 <div id="mensagemErro" style="color: red;"></div> <!-- Mensagem de erro -->
+                <div id="mensagemSucesso" style="color: green;"></div> <!-- Mensagem de sucesso -->
             </div>
-        </form>
-
+        </form>        
     </div>
 </div>
 

@@ -10,7 +10,7 @@ if (file_exists($arq_dados)) {
 $email_existente = false;
 $email_inserido = $_REQUEST["email"];
 
-// Verificar se o e-mail já está cadastrado
+// Verificar se o e-mail já foi cadastrado
 foreach ($dados as $usuario) {
     if ($usuario['email'] === $email_inserido) {
         $email_existente = true;
