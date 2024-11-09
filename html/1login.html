@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & registro</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="wrapper">
@@ -27,158 +27,70 @@
     <div class="form-box">
 
         <!----------login formulario----------->
-
-        <form action="" method="post">
+        <form id="loginForm" method="post">
             <div class="login-container" id="login">
                 <div class="top">
-                     <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
-                     <header>Login</header>
+                    <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
+                    <header>Login</header>
+                </div>
+
+                <!-- Placeholder para mensagem de erro de login -->
+                {{mensagem_erro_login}}
+
+                <div class="input-box">
+                    <input type="text" id="emailLogin" name="email" class="input-field" placeholder="Email" required>
+                    <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                     <input type="text" class="input-field" placeholder="Nome de usuário ou Email">
-                     <i class="bx bx-user"></i>
-               </div>
-               <div class="input-box">
-                   <input type="password" class="input-field" placeholder="Senha">
-                   <i class="bx bx-lock-alt"></i>
-               </div>
-               <div class="input-box">
-                   <input type="submit" class="submit" value="Entrar">
-               </div>
-               <div class="two-col">
-                   <div class="onde">
-                       <input type="checkbox" id="login">
-                       <label for="register-check">Lembrar senha</label>
-                   </div>
-                   <div class="two">
-                       <label><a href="#">Esqueceu a senha ?</a></label>
-                   </div>
-               </div>
-           </div>
+                    <input type="password" id="senhaLogin" name="senha" class="input-field" placeholder="Senha" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="button" class="submit" value="Entrar" onclick="loginUser()">
+                </div>
+                <div id="mensagemErroLogin" style="color: red;"></div> <!-- Mensagem de erro -->
+            </div>
         </form>
+        
 
 
         <!----------registro formulario----------->
-        <form action="#acao" method="post">
+        <form id="registerForm" method="post">
             <div class="register-container" id="register">
                 <div class="top">
-                     <span>Possui uma conta ?<a href="#" onclick="login()">Login</a></span>
-                     <header>Registrar</header>
+                    <span>Possui uma conta ?<a href="#" onclick="login()">Login</a></span>
+                    <header>Registrar</header>
                 </div>
                 <div class="two-forms">
-                   <div class="input-box">
-                       <input type="text" class="input-field" placeholder="Nome">
-                       <i class="bx bx-user"></i>
-                   </div>
-                   <div class="input-box">
-                       <input type="text" class="input-field" placeholder="Sobrenome">
-                       <i class="bx bx-user"></i>
-                   </div>
+                    <div class="input-box">
+                        <input type="text" name="nome" class="input-field" placeholder="Nome" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="sobrenome" class="input-field" placeholder="Sobrenome" required>
+                        <i class="bx bx-user"></i>
+                    </div>
                 </div>
                 <div class="input-box">
-                     <input type="text" class="input-field" placeholder="Email">
-                     <i class="bx bx-envelope"></i>
-               </div>
-               <div class="input-box">
-                   <input type="password" class="input-field" placeholder="Senha">
-                   <i class="bx bx-lock-alt"></i>
-               </div>
-               <div class="input-box">
-                   <input type="submit" class="submit" value="Registrar" onclick="cadastrar()">
-               </div>
-               <div class="two-col">
-                   <div class="onde">
-                       <input type="checkbox" id="register-check">
-                       <label for="register-check">Remember Me</label>
-                   </div>
-                   <div class="two">
-                       <label><a href="#">Termos e condições</a></label>
-                   </div>
-               </div>
-           </div>
-        </form>
-
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="senha" class="input-field" placeholder="Senha" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="button" class="submit" value="Registrar" onclick="registerUser()">
+                </div>
+                <div id="mensagemErro" style="color: red;"></div> <!-- Mensagem de erro -->
+                <div id="mensagemSucesso" style="color: green;"></div> <!-- Mensagem de sucesso -->
+            </div>
+        </form>        
     </div>
 </div>
 
 
-<script>
-    function myMenuFunction(){
-        var i = document.getElementById("navMenu");
 
-        if(i.className === "nav-menu"){
-            i.className += "responsive";
-        } else {
-            i.className = "nav-menu";
-        }
-    }
-</script>
-
-<script>
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-
-   function login(){
-    x.style.left  = "4px";
-    y.style.right = "-520px";
-    a.className  += " white-btn";
-    b.className   = "btn";
-    x.style.opacity  = "1";
-    y.style.opacity = "0";
-   }
-
-   function register(){
-    x.style.left  = "-510px";
-    y.style.right = "5px";
-    a.className   = "btn";
-    b.className  += " white-btn";
-    x.style.opacity  = "0";
-    y.style.opacity = "1";
-   }
-</script>
-
-<script>
-
-    function logar(){
-        var usuario = document.querySelector('#login .input-field[type="text"]').value;
-        var senha = document.querySelector('#login .input-field[type="password"]').value;
-
-    // Verificando as credenciais
-    if (usuario === 'ana' && senha === "123") {
-        window.location.href = "menu.html";
-    } else {
-        alert('Login ou senha inválido');
-    }
-}
-</script>
-<script>
-    function cadastrar() {
-        var nome = document.querySelector('#register .input-field[placeholder="Nome"]').value;
-        var sobrenome = document.querySelector('#register .input-field[placeholder="Sobrenome"]').value;
-        var email = document.querySelector('#register .input-field[placeholder="Email"]').value;
-        var senha = document.querySelector('#register .input-field[type="password"]').value;
-
-        var usuarioCadastrado = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-        // Verifica se o email já está cadastrado
-        if (usuarioCadastrado.some(user => user.email === email)) {
-            alert('Email já cadastrado!');
-            return;
-        }
-
-        // Adiciona o novo usuário
-        usuarioCadastrado.push({ nome, sobrenome, email, senha });
-        localStorage.setItem('usuarios', JSON.stringify(usuarioCadastrado));
-
-        alert('Cadastro realizado com sucesso!');
-        // Opcionalmente, redirecionar para a página de login
-        login(); // Você pode redirecionar ou exibir uma mensagem de sucesso.
-    }
-</script>
-</script>
-
-
+<script src="js/login-cadastro.js"></script>
 </body>
 </html>
