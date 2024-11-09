@@ -1,14 +1,32 @@
 <?php
- include("config.php");
+include("config.php");
 
- $dados = [];
- if (file_exists($arq_dados)){
-   $dados_json = file_get_contents($arq_dados);
-   $dados = json_decode($dados_json, true);
- }
+$dados = [];
+if (file_exists($arq_dados)) {
+    $dados_json = file_get_contents($arq_dados);
+    $dados = json_decode($dados_json, true);
+}
 
- $id = gera_id($dados);
- function gera_id($dados)
+$email_existente = false;
+$email_inserido = $_REQUEST["email"];
+
+// Verificar se o e-mail já está cadastrado
+foreach ($dados as $usuario) {
+    if ($usuario['email'] === $email_inserido) {
+        $email_existente = true;
+        break;
+    }
+}
+
+if ($email_existente) {
+    // Responde com erro se o email já existe
+    echo json_encode(["erro" => "Esse email já foi cadastrado."]);
+    exit;
+}
+
+// Continua com o cadastro caso o email não exista
+$id = gera_id($dados);
+function gera_id($dados)
  {
     $ids = array_column($dados, 'id');
     $id  = 0;
@@ -19,17 +37,18 @@
     return $id;
  }
 
- $dados_usuario = [];
- $dados_usuario["id"] = $id;
- $dados_usuario["nome"] = $_REQUEST["nome"];
- $dados_usuario["sobrenome"] = $_REQUEST["sobrenome"];
- $dados_usuario["email"] = $_REQUEST["email"];
- $dados_usuario["senha"] = $_REQUEST["senha"];
+$dados_usuario = [
+    "id" => $id,
+    "nome" => $_REQUEST["nome"],
+    "sobrenome" => $_REQUEST["sobrenome"],
+    "email" => $email_inserido,
+    "senha" => $_REQUEST["senha"]
+];
 
- array_push($dados, $dados_usuario);
- $dados_json = json_encode($dados);
- file_put_contents($arq_dados, $dados_json);
+array_push($dados, $dados_usuario);
+$dados_json = json_encode($dados);
+file_put_contents($arq_dados, $dados_json);
 
- header("Location: lista-usuarios.php"); /* CONFERIR */
-
+// Responde com sucesso
+echo json_encode(["sucesso" => "Usuário cadastrado com sucesso."]);
 ?>
