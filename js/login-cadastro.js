@@ -8,35 +8,13 @@ function myMenuFunction(){
     }
 }
 
-let a = document.getElementById("loginBtn");
-let b = document.getElementById("registerBtn");
-let x = document.getElementById("login");
-let y = document.getElementById("register");
-
-function login(){
-x.style.left  = "4px";
-y.style.right = "-520px";
-a.className  += " white-btn";
-b.className   = "btn";
-x.style.opacity  = "1";
-y.style.opacity = "0";
-}
-
-function register(){
-x.style.left  = "-510px";
-y.style.right = "5px";
-a.className   = "btn";
-b.className  += " white-btn";
-x.style.opacity  = "0";
-y.style.opacity = "1";
-}
-
-/* Função para exibir as mensagens de erro ou sucesso do cadastro de usuários.*/
-function registerUser() {
+/* Função referente ao cadastro de usuários.*/
+function registerUser(event) {
+    event.preventDefault();
     const form = document.getElementById("registerForm");
     const formData = new FormData(form);
 
-    fetch('create.php', {
+    fetch('php/create.php', {
         method: 'POST',
         body: formData
     })
@@ -47,18 +25,15 @@ function registerUser() {
         
         if (data.erro) {
             mensagemErro.textContent = data.erro;
-            mensagemSucesso.textContent = ""; // Limpa a mensagem de sucesso
+            mensagemSucesso.textContent = "";
         } else {
-            mensagemErro.textContent = ""; // Limpa a mensagem de erro
-            mensagemSucesso.textContent = data.sucesso; // Exibe a mensagem de sucesso
-            
-            // Opcional: Limpa os campos do formulário após o cadastro
+            mensagemErro.textContent = "";
+            mensagemSucesso.textContent = data.sucesso;
             form.reset();
 
-            // Opcional: Redireciona para a página de login após alguns segundos
+            // Redireciona para a página de login após o cadastro
             setTimeout(() => {
-                login(); // Mostra a seção de login
-                mensagemSucesso.textContent = ""; // Limpa a mensagem de sucesso
+                window.location.href = 'login.html';
             }, 3000);
         }
     })
@@ -67,33 +42,8 @@ function registerUser() {
     });
 }
 
-/*function loginUser() {
-    const email = document.getElementById("emailLogin").value;
-    const senha = document.getElementById("senhaLogin").value;
-    const mensagemErroLogin = document.getElementById("mensagemErroLogin");
 
-    // Cria um FormData com as credenciais de login
-    const formData = new FormData();
-    formData.append("email", email);
-    formData.append("senha", senha);
 
-    // Faz a requisição AJAX para o login.php
-    fetch('php/login.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.erro) {
-            mensagemErroLogin.textContent = data.erro; // Exibe a mensagem de erro
-        } else if (data.sucesso) {
-            window.location.href = 'home.php'; // Redireciona para a página inicial
-        }
-    })
-    .catch(error => {
-        console.error("Erro ao realizar o login:", error);
-        mensagemErroLogin.textContent = "Erro ao realizar o login. Tente novamente mais tarde.";
-    });
-}*/
+
 
 

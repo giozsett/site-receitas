@@ -25,6 +25,7 @@
  /*paginas para as quais o usuário será direcionado.*/
  $paginas = [
     'login' => 'php/login.php',
+    'cadastro' => 'php/cadastro.php',
     'home' => 'php/home.php',
     'deslogar' => 'php/deslogar.php',
     'metas' => 'php/metas.php',

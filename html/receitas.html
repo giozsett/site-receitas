@@ -10,14 +10,20 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <span class="navlinks"><a href="index.php?pagina=home">Início</a></span>
-        <span class="navlinks"><a href="index.php?pagina=metas">Metas</a></span>
-        <span class="navlinks"><a href="index.php?pagina=imc">TMB IMC</a></span>
-        <span class="navlinks"><a href="index.php?pagina=treinos">Treinos</a></span>
-        <span class="navlinks"><a href="index.php?pagina=receitas">Receitas</a></span>
-        <span class="navlinks"><a href="index.php?pagina=perfil">Perfil</a></span>
-        <span class="material-symbols-rounded size-20">person</span>    
+    <div class="topo">
+        <div class="logo">
+            green fit
+        </div>
+
+        <div class="navbar">
+            <span class="navlinks"><a href="index.php?pagina=home">Início</a></span>
+            <span class="navlinks"><a href="index.php?pagina=metas">Metas</a></span>
+            <span class="navlinks"><a href="index.php?pagina=imc">TMB IMC</a></span>
+            <span class="navlinks"><a href="index.php?pagina=treinos">Treinos</a></span>
+            <span class="navlinks"><a href="index.php?pagina=receitas">Receitas</a></span>
+            <span class="navlinks"><a href="index.php?pagina=perfil">Perfil</a></span>
+            <span class="material-symbols-rounded size-20">person</span>    
+        </div>
     </div>
 
     <main>
@@ -25,8 +31,8 @@
             <h1>Receitas</h1>
 
             <div class="seleciona-receita">
-                <label for="receita_escolhida">Tipo de receita: </label>
-                <select name="receita_escolhida" id="receita_escolhida">
+                <label for="refeicao_escolhida">Tipo de receita: </label>
+                <select name="refeicao_escolhida" id="refeicao_escolhida">
                     <option value="0" disabled selected>Selecione</option>
                     <option value="1">Café da manhã</option>
                     <option value="2">Almoço</option>
@@ -35,7 +41,21 @@
                     <option value="5">Pré-treino</option>
                 </select>
             </div>
+
+            <div class="refeicao-escolhida">
+
+            </div>
         </div>
     </main>
+
+    <footer class="contato">
+        <span><a href="#"><u>n</u></a></a> (12) 3456-7890</span>
+        <span><a href="#"><u>c</u></a></span>
+        <span><a href="#"><u>f</u></a></span>
+        <span><a href="#"><u>i</u></a></span>
+        <span><a href="#"><u>t</u></a></span>
+    </footer>
+
+    <script src="js/receitas.js"></script>
 </body>
 </html>

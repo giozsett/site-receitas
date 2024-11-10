@@ -10,21 +10,27 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <span class="navlinks"><a href="index.php?pagina=home">Início</a></span>
-        <span class="navlinks"><a href="index.php?pagina=metas">Metas</a></span>
-        <span class="navlinks"><a href="index.php?pagina=imc">TMB IMC</a></span>
-        <span class="navlinks"><a href="index.php?pagina=treinos">Treinos</a></span>
-        <span class="navlinks"><a href="index.php?pagina=receitas">Receitas</a></span>
-        <span class="navlinks"><a href="index.php?pagina=perfil">Perfil</a></span>
-        <span class="material-symbols-rounded size-20">person</span>    
+    <div class="topo">
+        <div class="logo">
+            green fit
+        </div>
+
+        <div class="navbar">
+            <span class="navlinks"><a href="index.php?pagina=home">Início</a></span>
+            <span class="navlinks"><a href="index.php?pagina=metas">Metas</a></span>
+            <span class="navlinks"><a href="index.php?pagina=imc">TMB IMC</a></span>
+            <span class="navlinks"><a href="index.php?pagina=treinos">Treinos</a></span>
+            <span class="navlinks"><a href="index.php?pagina=receitas">Receitas</a></span>
+            <span class="navlinks"><a href="index.php?pagina=perfil">Perfil</a></span>
+            <span class="material-symbols-rounded size-20">person</span>    
+        </div>
     </div>
 
     <main>
         <div class="imc-tmb">
             <h1>Cálculo do IMC e TMB</h1>
 
-            <form action="" method="post">
+            <form action="" id="calcForm">
                 <div class="dados-calculo">
                     <label for="sexo">Sexo: </label>
                     <select name="sexo" id="sexo">
@@ -43,11 +49,26 @@
                     <input type="number" name="peso" id="peso">
 
                     <div class="btn-calcular">
-                        <input type="submit" value="Calcular">
+                        <input type="button" value="Calcular" onclick="calcularIMC_TMB()">
+                    </div>
+
+                    <div id="resultado">
+                        <p id="imcResultado"></p>
+                        <p id="tmbResultado"></p>
                     </div>
                 </div>
             </form>
         </div>
     </main>
+
+    <footer class="contato">
+        <span><a href="#"><u>n</u></a></a> (12) 3456-7890</span>
+        <span><a href="#"><u>c</u></a></span>
+        <span><a href="#"><u>f</u></a></span>
+        <span><a href="#"><u>i</u></a></span>
+        <span><a href="#"><u>t</u></a></span>
+    </footer>
+
+    <script src="js/tmb-imc.js"></script>
 </body>
 </html>

@@ -30,7 +30,10 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    background-color: rgb(28, 28, 28);
+    background: url('../imagens/img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .topo {
@@ -56,12 +59,12 @@ body {
     width: 70%;
     height: 50px;
     border-radius: 50px;
-    background-color: rgba(59, 59, 59, 0.7);
+    background-color: rgba(59, 59, 59, 0.85);
     margin: 25px 0px;
 }
 
 .navlinks {
-    padding: 8px 12px;
+    padding: 8px 10px;
     margin: 0px 10px;
     font-family: 'Anton';
     font-size: 24px;
@@ -70,7 +73,9 @@ body {
 }
 
 .navlinks:hover {
-    background-color: #3bd5da;
+    background: radial-gradient(circle, rgba(39,115,117,1) 0%, rgba(46,158,162,1) 58%, rgba(59,213,218, 0.8) 100%);
+    outline: 1px solid rgb(13, 56, 58);
+    outline-offset: -3px;
 }
 
 .navlinks a {
@@ -81,7 +86,7 @@ body {
 .contato {
     background-color: rgb(35, 113, 116);
     width: 98%;
-    height: 30px;
+    height: 26px;
     border-radius: 10px;
     padding: 2px 5px;
     position: fixed;
@@ -110,10 +115,14 @@ body {
 /* HOME */
 main {
     width: 100%;
-    margin: 10px 10px 40px 10px;
+    margin: 10px 40px 40px 40px;
     border-radius: 10px;
-    background-color: rgba(46, 46, 46, 0.65);
+    background-color: rgba(46, 46, 46, 0.95);
     padding: 20px 30px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgb(35, 113, 116, 0.55);
+    -moz-box-shadow: 4px 4px 8px 0px rgb(35, 113, 116, 0.55);
+    box-shadow: 4px 4px 8px 0px rgb(35, 113, 116, 0.55);
+    border: 1px solid #289094;
 }
 
 main h1 {
@@ -372,7 +381,7 @@ article {
     justify-content: center;
 }
 
-.btn-calcular input[type="submit"] {
+.btn-calcular input[type="button"] {
     margin-top: 25px;
     padding: 10px 15px;
     transition: all 0.4s linear;
@@ -384,7 +393,7 @@ article {
     font-weight: bold;
 }
 
-.btn-calcular input[type="submit"]:hover {
+.btn-calcular input[type="button"]:hover {
     padding: 12px 18px;
     box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
     background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
@@ -431,6 +440,10 @@ article {
     margin: 0px 10px 00px 10px;
 }
 
+.treino-escolhido {
+    margin: 25px 10px 15px 10px;
+}
+
 
 
 /* RECEITAS*/
@@ -468,6 +481,10 @@ article {
     border-radius: 15px;
     border-style: none;
     margin: 0px 10px 00px 10px;
+}
+
+.refeicao-escolhida {
+    margin: 25px 10px 15px 10px;
 }
 
 

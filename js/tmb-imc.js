@@ -1,9 +1,9 @@
 // Função para calcular IMC e TMB
 function calcularIMC_TMB() {
-    const sexo = document.getElementById('sexo').value;
-    const idade = parseInt(document.getElementById('idade').value);
-    const altura = parseFloat(document.getElementById('altura').value) / 100; // Convertendo de cm para metros
-    const peso = parseFloat(document.getElementById('peso').value);
+    let sexo = document.getElementById('sexo').value;
+    let idade = parseInt(document.getElementById('idade').value);
+    let altura = parseFloat(document.getElementById('altura').value) / 100; // Convertendo de cm para metros
+    let peso = parseFloat(document.getElementById('peso').value);
 
     // Verifica se todos os campos foram preenchidos corretamente
     if (isNaN(idade) || isNaN(altura) || isNaN(peso) || sexo == "0") {
@@ -12,7 +12,7 @@ function calcularIMC_TMB() {
     }
 
     // Cálculo do IMC
-    const imc = peso / (altura * altura);
+    let imc = peso / (altura * altura);
     document.getElementById('imcResultado').innerText = `Seu IMC é: ${imc.toFixed(2)}`;
 
     // Cálculo da TMB (Taxa de Metabolismo Basal)
