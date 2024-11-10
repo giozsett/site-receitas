@@ -16,16 +16,16 @@
  if (empty($login_ok)) {
     $pagina = 'login';
  } else {
-    $pagina = $_GET['pagina'] ?? 'menu';
+    $pagina = $_GET['pagina'] ?? 'home';
  }
  if (!empty($login_ok) && $pagina == 'login') {
-    $pagina = 'menu';
+    $pagina = 'home';
 }
 
  /*paginas para as quais o usuário será direcionado.*/
  $paginas = [
     'login' => 'php/login.php',
-    'menu' => 'php/menu.php',
+    'home' => 'php/home.php',
     'deslogar' => 'php/deslogar.php',
     'metas' => 'php/metas.php',
     'imc' => 'php/imc.php',

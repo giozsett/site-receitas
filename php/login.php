@@ -17,12 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         // Verifica as credenciais no arquivo JSON
         $credenciais = json_decode(file_get_contents(__DIR__ . "/../dados/usuarios.json"), true);
+        $conteudo = file_get_contents(__DIR__ . "/../dados/usuarios.json");
+        if ($conteudo === false) {
+            die("Erro ao acessar o arquivo de usuários.");
+        }
+        $credenciais = json_decode($conteudo, true);
+
 
         foreach ($credenciais as $usuario) {
             if ($usuario['email'] == $email && $usuario['senha'] == $senha) {
                 // Credenciais corretas: salva o email na sessão e redireciona ao menu
                 $_SESSION['email'] = $email;
-                header('Location: ../index.php?pagina=menu');
+                header('Location: ../index.php?pagina=home');
                 exit;
             }
         }
@@ -35,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $pagina_login_cadastro = file_get_contents(__DIR__ . '/../html/1login.html');
 
 // Substitui o placeholder de erro no HTML
-$pagina_login_cadastro = str_replace("{{mensagem_erro_login}}", "<div style='color: red;'>$msg_erro</div>", $pagina_login_cadastro);
+$pagina_login_cadastro = str_replace("{{mensagem_erro_login}}", "<div id='mensagemErroLogin' style='color: red;'>$msg_erro</div>", $pagina_login_cadastro);
 
 // Exibe a página de login e cadastro
 echo $pagina_login_cadastro;

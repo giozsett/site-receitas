@@ -49,6 +49,6 @@
  }
 
  $conteudo_pagina = preencher_pagina($nome, $sobrenome, $email, $senha, $id, $usuario_cadastrado, $acao);
-echo $conteudo_pagina;
+ echo $conteudo_pagina;
  
 ?>
