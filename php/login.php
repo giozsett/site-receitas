@@ -38,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Carrega o conteúdo HTML do formulário de login e cadastro
-$pagina_login_cadastro = file_get_contents(__DIR__ . '/../html/1login.html');
+$pagina_login= file_get_contents(__DIR__ . '/../html/login.html');
 
 // Substitui o placeholder de erro no HTML
-$pagina_login_cadastro = str_replace("{{mensagem_erro_login}}", "<div id='mensagemErroLogin' style='color: red;'>$msg_erro</div>", $pagina_login_cadastro);
+$pagina_login = str_replace("{{mensagem_erro_login}}", "<div id='mensagemErroLogin' style='color: red;'>$msg_erro</div>", $pagina_login_cadastro);
 
 // Exibe a página de login e cadastro
 echo $pagina_login_cadastro;
