@@ -1,21 +1,21 @@
 [
-{ "id": "1", type: "Café da manhã", name: "Smoothie de Aveia e Banana", description: "Uma mistura de aveia, banana e leite de amêndoas.", calories: 200 },
-{ "id": "2", type: "Café da manhã", name: "Panquecas de Aveia", description: "Panquecas de aveia com mel e frutas vermelhas.", calories: 250 },
-{ "id": "3", type: "Café da manhã", name: "Omelete de Espinafre", description: "Omelete feita com espinafre, cogumelos e queijo cottage.", calories: 220 },
+{ "id": "1", "refeicao": "Café da manhã", "nome": "Smoothie de Aveia e Banana", "descricao": "Uma mistura de aveia, banana e leite de amêndoas.", "calorias": 200 },
+{ "id": "2", "refeicao": "Café da manhã", "nome": "Panquecas de Aveia", "descricao": "Panquecas de aveia com mel e frutas vermelhas.", "calorias": 250 },
+{ "id": "3", "refeicao": "Café da manhã", "nome": "Omelete de Espinafre", "descricao": "Omelete feita com espinafre, cogumelos e queijo cottage.", "calorias": 220 },
 
-{ "id": "4", type: "Almoço", name: "Salada de Grão de Bico", description: "Grão de bico, legumes frescos e temperos leves.", calories: 300 },
-{ "id": "5", type: "Almoço", name: "Quinoa com Legumes Assados", description: "Quinoa acompanhada de legumes assados como abóbora, cenoura e abobrinha.", calories: 350 },
-{ "id": "6", type: "Almoço", name: "Filé de Peixe Grelhado", description: "Filé de peixe grelhado com arroz integral e legumes.", calories: 400 },
+{ "id": "4", "refeicao": "Almoço", "nome": "Salada de Grão de Bico", "descricao": "Grão de bico, legumes frescos e temperos leves.", "calorias": 300 },
+{ "id": "5", "refeicao": "Almoço", "nome": "Quinoa com Legumes Assados", "descricao": "Quinoa acompanhada de legumes assados como abóbora, cenoura e abobrinha.", "calorias": 350 },
+{ "id": "6", "refeicao": "Almoço", "nome": "Filé de Peixe Grelhado", "descricao": "Filé de peixe grelhado com arroz integral e legumes.", "calorias": 400 },
 
-{ "id": "7", type: "Lanche", name: "Iogurte com Frutas e Granola", description: "Iogurte natural com frutas vermelhas e granola.", calories: 150 },
-{ "id": "8", type: "Lanche", name: "Wrap de Frango com Abacate", description: "Wrap de frango desfiado, abacate, alface e tomate.", calories: 250 },
-{ "id": "9", type: "Lanche", name: "Barrinhas de Cereal Caseiras", description: "Barrinhas de cereal com aveia, mel e amendoim.", calories: 200 },
+{ "id": "7", "refeicao": "Lanche", "nome": "Iogurte com Frutas e Granola", "descricao": "Iogurte natural com frutas vermelhas e granola.", "calorias": 150 },
+{ "id": "8", "refeicao": "Lanche", "nome": "Wrap de Frango com Abacate", "descricao": "Wrap de frango desfiado, abacate, alface e tomate.", "calorias": 250 },
+{ "id": "9", "refeicao": "Lanche", "nome": "Barrinhas de Cereal Caseiras", "descricao": "Barrinhas de cereal com aveia, mel e amendoim.", "calorias": 200 },
 
-{ "id": "10", type: "Jantar", name: "Frango Grelhado com Brócolis", description: "Filé de frango grelhado com brócolis cozidos.", calories: 350 },
-{ "id": "11", type: "Jantar", name: "Salmão ao Forno com Aspargos", description: "Salmão assado no forno com molho de limão e aspargos.", calories: 400 },
-{ "id": "12", type: "Jantar", name: "Sopa de Abóbora", description: "Sopa cremosa de abóbora com gengibre e cebola.", calories: 180 },
+{ "id": "10", "refeicao": "Jantar", "nome": "Frango Grelhado com Brócolis", "descricao": "Filé de frango grelhado com brócolis cozidos.", "calorias": 350 },
+{ "id": "11", "refeicao": "Jantar", "nome": "Salmão ao Forno com Aspargos", "descricao": "Salmão assado no forno com molho de limão e aspargos.", "calorias": 400 },
+{ "id": "12", "refeicao": "Jantar", "nome": "Sopa de Abóbora", "descricao": "Sopa cremosa de abóbora com gengibre e cebola.", "calorias": 180 },
 
-{ "id": "13", type: "Pré-treino", name: "Banana com Pasta de Amendoim", description: "Banana com uma colher de pasta de amendoim.", calories: 180 },
-{ "id": "14", type: "Pré-treino", name: "Aveia com Mel e Frutas", description: "Aveia cozida com mel e frutas picadas.", calories: 220 },
-{ "id": "15", type: "Pré-treino", name: "Sanduíche de Pão Integral com Atum", description: "Pão integral com atum, alface e tomate.", calories: 250 }
+{ "id": "13", "refeicao": "Pré-treino", "nome": "Banana com Pasta de Amendoim", "descricao": "Banana com uma colher de pasta de amendoim.", "calorias": 180 },
+{ "id": "14", "refeicao": "Pré-treino", "nome": "Aveia com Mel e Frutas", "descricao": "Aveia cozida com mel e frutas picadas.", "calorias": 220 },
+{ "id": "15", "refeicao": "Pré-treino", "nome": "Sanduíche de Pão Integral com Atum", "descricao": "Pão integral com atum, alface e tomate.", "calorias": 250 }
 ]
