@@ -64,7 +64,7 @@ body {
 }
 
 .navlinks {
-    padding: 8px 12px;
+    padding: 8px 10px;
     margin: 0px 10px;
     font-family: 'Anton';
     font-size: 24px;
@@ -73,7 +73,9 @@ body {
 }
 
 .navlinks:hover {
-    background-color: #3bd5da;
+    background: radial-gradient(circle, rgba(39,115,117,1) 0%, rgba(46,158,162,1) 58%, rgba(59,213,218, 0.8) 100%);
+    outline: 1px solid rgb(13, 56, 58);
+    outline-offset: -3px;
 }
 
 .navlinks a {
@@ -84,7 +86,7 @@ body {
 .contato {
     background-color: rgb(35, 113, 116);
     width: 98%;
-    height: 30px;
+    height: 26px;
     border-radius: 10px;
     padding: 2px 5px;
     position: fixed;
@@ -115,7 +117,7 @@ main {
     width: 100%;
     margin: 10px 40px 40px 40px;
     border-radius: 10px;
-    background-color: rgba(46, 46, 46, 0.9);
+    background-color: rgba(46, 46, 46, 0.95);
     padding: 20px 30px;
     -webkit-box-shadow: 4px 4px 8px 0px rgb(35, 113, 116, 0.55);
     -moz-box-shadow: 4px 4px 8px 0px rgb(35, 113, 116, 0.55);
