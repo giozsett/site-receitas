@@ -30,7 +30,10 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    background-color: rgb(28, 28, 28);
+    background: url('../imagens/img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .topo {
