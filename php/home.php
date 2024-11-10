@@ -2,6 +2,6 @@
     include("config.php");
 
     /*faz o conteúdo html aparecer na tela.*/
-    $pagina_html = file_get_contents($home);
-    echo $pagina_html;
+    $conteudo_home = file_get_contents(__DIR__ . '/../html/home.html');
+    echo $conteudo_home;
 ?>

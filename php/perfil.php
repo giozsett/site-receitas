@@ -2,6 +2,6 @@
     include("config.php");
 
     /*faz o conteúdo html aparecer na tela.*/
-    $pagina_html = file_get_contents($perfil);
-    echo $pagina_html;
+    $conteudo_perfil = file_get_contents(__DIR__ . '/../html/perfil.html');
+    echo $conteudo_perfil;
 ?>

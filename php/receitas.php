@@ -2,6 +2,6 @@
     include("config.php");
 
     /*faz o conteúdo html aparecer na tela.*/
-    $pagina_html = file_get_contents($receitas);
-    echo $pagina_html;
+    $conteudo_receitas = file_get_contents(__DIR__ . '/../html/receitas.html');
+    echo $conteudo_receitas;
 ?>

@@ -2,6 +2,6 @@
     include("config.php");
 
     /*faz o conteúdo html aparecer na tela.*/
-    $pagina_html = file_get_contents($metas);
-    echo $pagina_html;
+    $conteudo_metas = file_get_contents(__DIR__ . '/../html/metas.html');
+    echo $conteudo_metas;
 ?>
