@@ -1,96 +1,47 @@
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & registro</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="wrapper">
-    <nav class="nav">
-        <div class="nav-logo">
-            <p>GREEN FIT. </p>
-        </div>
-      
-        <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Entrar</button>
-            <button class="btn" id="registerBtn" onclick="register()">Inscrever-se</button>
-        </div>
-        <div class="nav-menu-btn">
-          <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
-
-<!--------Form box------------>
-    <div class="form-box">
-
-        <!----------login formulario----------->
-        <form id="loginForm" method="post">
-            <div class="login-container" id="login">
-                <div class="top">
-                    <span>Não tenho uma conta ?<a href="#" onclick="register()">Inscrever-se</a></span>
-                    <header>Login</header>
-                </div>
-
-                <!-- Placeholder para mensagem de erro de login -->
-                {{mensagem_erro_login}}
-
-                <div class="input-box">
-                    <input type="text" id="emailLogin" name="email" class="input-field" placeholder="Email" required>
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" id="senhaLogin" name="senha" class="input-field" placeholder="Senha" required>
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Entrar">
-                </div>
-                <div id="mensagemErroLogin" style="color: red;"></div> <!-- Mensagem de erro -->
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>GREEN FIT.</p>
             </div>
-        </form>
-        
-
-
-        <!----------registro formulario----------->
-        <form id="registerForm" method="post" onsubmit="registerUser(event)">
-            <div class="register-container" id="register">
-                <div class="top">
-                    <span>Possui uma conta ?<a href="#" onclick="login()">Login</a></span>
-                    <header>Registrar</header>
-                </div>
-                <div class="two-forms">
+            <div class="nav-button">
+                <button class="btn white-btn" onclick="window.location.href='index.php?pagina=login'">Entrar</button>
+                <button class="btn" onclick="window.location.href='index.php?pagina=cadastro'">Inscrever-se</button>
+            </div>
+        </nav>
+        <div class="form-box">
+            <form id="loginForm" method="post" action="index.php?pagina=login">
+                <div class="login-container" id="login">
+                    <div class="top">
+                        <span>Não tenho uma conta? <a href="cadastro.php">Inscrever-se</a></span>
+                        <header>Login</header>
+                    </div>
                     <div class="input-box">
-                        <input type="text" name="nome" class="input-field" placeholder="Nome" required>
+                        <input type="text" name="email" class="input-field" placeholder="Email" required>
                         <i class="bx bx-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="sobrenome" class="input-field" placeholder="Sobrenome" required>
-                        <i class="bx bx-user"></i>
+                        <input type="password" name="senha" class="input-field" placeholder="Senha" required>
+                        <i class="bx bx-lock-alt"></i>
                     </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Entrar">
+                    </div>
+                    <div id="mensagemErroLogin" style="color: red;"></div>
                 </div>
-                <div class="input-box">
-                    <input type="email" name="email" class="input-field" placeholder="Email" required>
-                    <i class="bx bx-envelope"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" name="senha" class="input-field" placeholder="Senha" required>
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Registrar">
-                </div>
-                <div id="mensagemErro" style="color: red;"></div> <!-- Mensagem de erro -->
-                <div id="mensagemSucesso" style="color: green;"></div> <!-- Mensagem de sucesso -->
-            </div>
-        </form>        
+            </form>
+        </div>
     </div>
-</div>
-
-
-
-<script src="js/login-cadastro.js"></script>
+    <script src="js/login-cadastro.js"></script>
 </body>
 </html>

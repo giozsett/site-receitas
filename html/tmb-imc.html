@@ -24,7 +24,7 @@
         <div class="imc-tmb">
             <h1>Cálculo do IMC e TMB</h1>
 
-            <form action="" method="post">
+            <form action="" id="calcForm">
                 <div class="dados-calculo">
                     <label for="sexo">Sexo: </label>
                     <select name="sexo" id="sexo">
@@ -43,11 +43,18 @@
                     <input type="number" name="peso" id="peso">
 
                     <div class="btn-calcular">
-                        <input type="submit" value="Calcular">
+                        <input type="button" value="Calcular" onclick="calcularIMC_TMB()">
+                    </div>
+
+                    <div id="resultado">
+                        <p id="imcResultado"></p>
+                        <p id="tmbResultado"></p>
                     </div>
                 </div>
             </form>
         </div>
     </main>
+
+    <script src="js/tmb-imc.js"></script>
 </body>
 </html>

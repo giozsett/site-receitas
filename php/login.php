@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($usuario['email'] == $email && $usuario['senha'] == $senha) {
                 // Credenciais corretas: salva o email na sessão e redireciona ao menu
                 $_SESSION['email'] = $email;
-                header('Location: ../index.php?pagina=home');
+                header('Location: index.php?pagina=home');
                 exit;
             }
         }
@@ -37,14 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Carrega o conteúdo HTML do formulário de login e cadastro
-$pagina_login= file_get_contents(__DIR__ . '/../html/login.html');
+ // Carrega o conteúdo HTML do formulário de login
+ $pagina_login= file_get_contents(__DIR__ . '/../html/login.html');
+ // Substitui o placeholder de erro no HTML
+ $pagina_login = str_replace("{{mensagem_erro_login}}", "<div id='mensagemErroLogin' style='color: red;'>$msg_erro</div>", $pagina_login);
 
-// Substitui o placeholder de erro no HTML
-$pagina_login = str_replace("{{mensagem_erro_login}}", "<div id='mensagemErroLogin' style='color: red;'>$msg_erro</div>", $pagina_login_cadastro);
-
-// Exibe a página de login e cadastro
-echo $pagina_login_cadastro;
+// Exibe a página de login
+echo $pagina_login;
 ?>
 
 

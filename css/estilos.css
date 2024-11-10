@@ -372,7 +372,7 @@ article {
     justify-content: center;
 }
 
-.btn-calcular input[type="submit"] {
+.btn-calcular input[type="button"] {
     margin-top: 25px;
     padding: 10px 15px;
     transition: all 0.4s linear;
@@ -384,7 +384,7 @@ article {
     font-weight: bold;
 }
 
-.btn-calcular input[type="submit"]:hover {
+.btn-calcular input[type="button"]:hover {
     padding: 12px 18px;
     box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
     background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
