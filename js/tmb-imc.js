@@ -13,7 +13,7 @@ function calcularIMC_TMB() {
 
     // Cálculo do IMC
     let imc = peso / (altura * altura);
-    document.getElementById('imcResultado').innerText = `Seu IMC é: ${imc.toFixed(2)}`;
+    document.getElementById('imcResultado').innerHTML = `<br><br><br> Seu IMC é: ${imc.toFixed(2)}`;
 
     // Cálculo da TMB (Taxa de Metabolismo Basal)
     let tmb;
@@ -23,6 +23,6 @@ function calcularIMC_TMB() {
         tmb = 88.362 + (13.397 * peso) + (4.799 * altura * 100) - (5.677 * idade); // altura em cm
     }
 
-    document.getElementById('tmbResultado').innerText = `Sua TMB é: ${tmb.toFixed(2)} calorias/dia`;
+    document.getElementById('tmbResultado').innerHTML = `<br> Sua TMB é: ${tmb.toFixed(2)} calorias/dia`;
 }
 
