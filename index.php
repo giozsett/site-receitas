@@ -10,7 +10,7 @@
  //página, cria a variável que verifica se o usuário está logado.
  $login_ok = $_SESSION['email'] ?? null;
 
- /*verificação das páginas, conferindo se está logado.*/
+ //verificação das páginas, conferindo se está logado.
  if (empty($login_ok)) {
     $pagina = 'login';
  } else {
