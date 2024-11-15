@@ -1,62 +1,67 @@
 <?php
-//session_start();
 include("config.php");
+defined('CONTROLE') or die('Erro no acesso');
 
-$conteudo_metas = file_get_contents(__DIR__ . '/../html/metas.html');
-
-// Verifica se o usuário está logado
-$email_usuario = $_SESSION['email'] ?? null;
-if ($email_usuario) {
-    // Carrega o arquivo usuario_metas.json
-    $arq_metas = __DIR__ . '/../dados/usuario_metas.json';
-    $metas = file_exists($arq_metas) ? json_decode(file_get_contents($arq_metas), true) : [];
-    
-    // Encontra as metas do usuário
-    $metas_usuario = [];
-    foreach ($metas as $meta) {
-        if ($meta['email'] === $email_usuario) {
-            $metas_usuario = $meta;
-            break;
-        }
-    }
-    
-    // Passa os dados de metas do usuário para o JavaScript
-    echo "<script>var metasAnteriores = " . json_encode($metas_usuario) . ";</script>";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
-echo $conteudo_metas;
+$conteudo_pagina_metas = file_get_contents(__DIR__ . '/../html/metas.html');
+echo $conteudo_pagina_metas;
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Caminho para o arquivo de metas
+    $arquivoMetas = __DIR__ . '/../dados/usuarios_metas.json';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $email_usuario) {
-    $nova_meta = [
-        'email' => $email_usuario,
-        'data' => $_POST['data_atual'] ?? '',
-        'peso' => $_POST['peso_atual'] ?? '',
-        'braco' => $_POST['braco_atual'] ?? '',
-        'cintura' => $_POST['cintura_atual'] ?? '',
-        'perna' => $_POST['perna_atual'] ?? ''
+    // Dados do formulário
+    $dataAtual = $_POST['data_atual'] ?? '';
+    $pesoAtual = $_POST['peso_atual'] ?? '';
+    $bracoAtual = $_POST['braco_atual'] ?? '';
+    $cinturaAtual = $_POST['cintura_atual'] ?? '';
+    $pernaAtual = $_POST['perna_atual'] ?? '';
+
+    // Ler conteúdo existente no arquivo
+    $dadosMetas = [];
+    if (file_exists($arquivoMetas)) {
+        $conteudoAtual = file_get_contents($arquivoMetas);
+        $dadosMetas = json_decode($conteudoAtual, true) ?? [];
+    }
+
+    $novaMeta = [
+        'data' => $dataAtual,
+        'peso' => $pesoAtual ?: null,
+        'braco' => $bracoAtual ?: null,
+        'cintura' => $cinturaAtual ?: null,
+        'perna' => $pernaAtual ?: null,
     ];
-
-    // Carrega o arquivo usuario_metas.json
-    $arq_metas = __DIR__ . '/../dados/usuario_metas.json';
-    $metas = file_exists($arq_metas) ? json_decode(file_get_contents($arq_metas), true) : [];
-
-    // Atualiza ou adiciona a meta do usuário
-    $atualizado = false;
-    foreach ($metas as &$meta) {
-        if ($meta['email'] === $email_usuario) {
-            $meta = $nova_meta;
-            $atualizado = true;
-            break;
-        }
+    
+    // Verifica se o ID já existe no JSON
+    if (!isset($dadosMetas[$usuarioId])) {
+        $dadosMetas[$usuarioId] = [];
     }
-    if (!$atualizado) {
-        $metas[] = $nova_meta;
+    
+    // Adiciona as novas metas no array do usuário
+    $dadosMetas[$usuarioId][] = $novaMeta;
+
+    if (isset($_SESSION['usuario_id'])) {
+        $usuarioId = $_SESSION['usuario_id'];
+    } else {
+        echo "Erro: Usuário não está logado.";
+        exit();
     }
 
-    // Salva as metas atualizadas
-    file_put_contents($arq_metas, json_encode($metas));
-    echo "<div style='color:green;'>Metas atualizadas com sucesso!</div>";
+    $usuarioId = $_SESSION['usuario_id'];
+    
+
+    // Salvar os dados atualizados no JSON
+    if (file_put_contents($arquivoMetas, json_encode($dadosMetas, JSON_PRETTY_PRINT)) !== false) {
+        // Redirecionar para evitar reenvio do formulário
+        header("Location: metas.php");
+        exit();
+    } else {
+        echo "Erro ao salvar os dados.";
+    }
 }
-
 ?>
+
+

@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($usuario['email'] == $email && $usuario['senha'] == $senha) {
                 // Credenciais corretas: salva o email na sessão e redireciona ao menu
                 $_SESSION['email'] = $email;
+                $_SESSION['usuario_id'] = $usuario['id'];
                 header('Location: index.php?pagina=home');
                 exit;
             }
