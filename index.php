@@ -1,29 +1,27 @@
 <?php
-  /*inicia a sessão*/
-  session_start();
+// Inicia a sessão
+session_start();
 
- /*cria uma constante p/ quando o código passar pelo index.*/
- define('CONTROLE', true);
+// Cria uma constante para garantir que o código foi acessado pelo index
+define('CONTROLE', true);
 
- /*
- se o login for bem sucedido, o usuário será direcionado para o menu.
- já que sempre passará pelo index ao direcionar o usuário a uma nova
- página, cria a variável que verifica se o usuário está logado.
- */
- $login_ok = $_SESSION['email'] ?? null;
+// Verifica se o usuário está logado
+$login_ok = $_SESSION['email'] ?? null;
 
- /*verificação das páginas, conferindo se está logado.*/
- if (empty($login_ok)) {
-    $pagina = 'login';
- } else {
-    $pagina = $_GET['pagina'] ?? 'home';
- }
- if (!empty($login_ok) && $pagina == 'login') {
+// Define a página inicial com base no estado de login
+if (empty($login_ok)) {
+    $pagina = $_GET['pagina'] ?? 'login'; // Padrão é a página de login
+} else {
+    $pagina = $_GET['pagina'] ?? 'home';  // Padrão é a página inicial do site
+}
+
+// Impede acesso à página de login caso o usuário já esteja logado
+if (!empty($login_ok) && $pagina === 'login') {
     $pagina = 'home';
 }
 
- /*paginas para as quais o usuário será direcionado.*/
- $paginas = [
+// Lista de páginas permitidas
+$paginas = [
     'login' => 'php/login.php',
     'cadastro' => 'php/cadastro.php',
     'home' => 'php/home.php',
@@ -33,10 +31,13 @@
     'treinos' => 'php/treinos.php',
     'receitas' => 'php/receitas.php',
     'perfil' => 'php/perfil.php'
- ];
+];
 
- if (!array_key_exists($pagina, $paginas)){
-    die('Erro no acesso');
- }
- require_once $paginas[$pagina];
+// Verifica se a página solicitada existe no array
+if (!array_key_exists($pagina, $paginas)) {
+    die('Erro: Página não encontrada.'); // Mensagem de erro amigável
+}
+
+// Requer o arquivo correspondente à página solicitada
+require_once $paginas[$pagina];
 ?>
