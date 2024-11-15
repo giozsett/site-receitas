@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // Inicia a sessão
 session_start();
 
@@ -22,6 +23,31 @@ if (!empty($login_ok) && $pagina === 'login') {
 
 // Lista de páginas permitidas
 $paginas = [
+=======
+  //inicia a sessão
+  session_start();
+
+ //cria uma constante p/ quando o código passar pelo index.
+ define('CONTROLE', true);
+
+ //se o login for bem sucedido, o usuário será direcionado para o menu.
+ //já que sempre passará pelo index ao direcionar o usuário a uma nova
+ //página, cria a variável que verifica se o usuário está logado.
+ $login_ok = $_SESSION['email'] ?? null;
+
+ //verificação das páginas, conferindo se está logado.
+ if (empty($login_ok)) {
+    $pagina = 'login';
+ } else {
+    $pagina = $_GET['pagina'] ?? 'home';
+ }
+ if (!empty($login_ok) && $pagina == 'login') {
+    $pagina = 'home';
+}
+
+ //paginas para as quais o usuário será direcionado.
+ $paginas = [
+>>>>>>> 8acda3cf471dcebb5429cd8b2a8540ea91f3c665
     'login' => 'php/login.php',
     'cadastro' => 'php/cadastro.php',
     'home' => 'php/home.php',
