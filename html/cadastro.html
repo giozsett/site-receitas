@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
     <div class="wrapper">
@@ -14,15 +14,16 @@
                 <p>green fit</p>
             </div>
             <div class="nav-button">
-                <button class="btn" onclick="window.location.href='index.php?pagina=login'">Entrar</button>
-                <button class="btn white-btn" onclick="window.location.href='index.php?pagina=cadastro'">Inscrever-se</button>
+                <button class="btn"><a href="index.php?pagina=login">Entrar</a></button>
+                <button class="btn white-btn"><a href="index.php?pagina=cadastro">Inscrever-se</a></button>
             </div>
         </nav>
+
         <div class="form-box">
-            <form id="registerForm" method="post">
+            <form id="registerForm" method="post" action="index.php?pagina=cadastro">
                 <div class="register-container" id="register">
                     <div class="top">
-                        <span>Já possui uma conta? <a href="login.html">Login</a></span>
+                        <span>Já possui uma conta? <a href="index.php?pagina=login">Login</a></span>
                         <header>Registrar</header>
                     </div>
                     <div class="two-forms">
@@ -56,6 +57,15 @@
             </form>
         </div>
     </div>
+
+    <footer class="contato">
+        <span><a href="#"><u>n</u></a></a> (12) 3456-7890</span>
+        <span><a href="#"><u>c</u></a></span>
+        <span><a href="#"><u>f</u></a></span>
+        <span><a href="#"><u>i</u></a></span>
+        <span><a href="#"><u>t</u></a></span>
+    </footer>
+
     <script src="js/login-cadastro.js"></script>
 </body>
 </html>

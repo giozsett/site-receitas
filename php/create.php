@@ -1,54 +1,55 @@
 <?php
-include("config.php");
+include(__DIR__ . '/../php/config.php');
 
-$dados = [];
-if (file_exists($arq_dados)) {
-    $dados_json = file_get_contents($arq_dados);
-    $dados = json_decode($dados_json, true);
+
+
+$nomeArq = '../dados/usuarios.json'; 
+$existe = file_exists($nomeArq);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao']) && $_POST['acao'] === 'salvar') {
+    $novoUsuario = [
+        'id' => gerarId($existe ? json_decode(file_get_contents($nomeArq), true) : []),
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'login' => $_POST['login'],
+        'senha' => $_POST['senha'],
+    ];
+
+    $dadosLidos = $existe ? json_decode(file_get_contents($nomeArq), true) : [];
+    $dadosLidos[] = $novoUsuario; 
+
+    file_put_contents($nomeArq, json_encode($dadosLidos, JSON_PRETTY_PRINT));
+    header("Location: " . $_SERVER['PHP_SELF']); 
+    exit();
 }
+include('../html/usuario.html');
 
-$email_existente = false;
-$email_inserido = $_REQUEST["email"];
 
-// Verificar se o e-mail já foi cadastrado
-foreach ($dados as $usuario) {
-    if ($usuario['email'] === $email_inserido) {
-        $email_existente = true;
-        break;
+if (!$existe) {
+    echo "<p><h3>Não existe nenhum usuário...</h3></p>";
+} else {
+    $jsonLido = file_get_contents($nomeArq);
+    $dadosLidos = json_decode($jsonLido, true);
+
+    echo "<hr><center><table><tr><td>Login</td><td>Email</td><td>Ações</td></tr>";
+    foreach ($dadosLidos as $usuario) {
+        $update = "crud.php?id=" . $usuario["id"]; 
+        $delete = "delete.php?id=" . $usuario["id"]; 
+
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($usuario["login"]) . "</td>";
+        echo "<td>" . htmlspecialchars($usuario["email"]) . "</td>";
+        echo "<td>";
+        echo "<a href='" . $update . "'>Alterar</a> &nbsp; ";
+        echo "<a href='" . $delete . "' onclick=\"return confirm('Tem certeza que deseja excluir?');\">Excluir</a>";
+        echo "</td></tr>";
     }
+    echo "</table></center>";
 }
 
-if ($email_existente) {
-    // Responde com erro se o email já existe
-    echo json_encode(["erro" => "Esse email já foi cadastrado."]);
-    exit;
-}
 
-// Continua com o cadastro caso o email não exista
-$id = gera_id($dados);
-function gera_id($dados)
- {
+function gerarId($dados) {
     $ids = array_column($dados, 'id');
-    $id  = 0;
-    if ( count($ids) > 0 ){
-         $id  = max($ids);
-    }
-    $id++;
-    return $id;
- }
-
-$dados_usuario = [
-    "id" => $id,
-    "nome" => $_REQUEST["nome"],
-    "sobrenome" => $_REQUEST["sobrenome"],
-    "email" => $email_inserido,
-    "senha" => $_REQUEST["senha"]
-];
-
-array_push($dados, $dados_usuario);
-$dados_json = json_encode($dados);
-file_put_contents($arq_dados, $dados_json);
-
-// Responde com sucesso
-echo json_encode(["sucesso" => "Usuário cadastrado com sucesso."]);
+    return count($ids) > 0 ? max($ids) + 1 : 1; 
+}
 ?>

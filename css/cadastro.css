@@ -111,8 +111,6 @@ form {
     transition: .5s ease-in-out;
 }
 .register-container{
-    position: absolute;
-    right: -520px;
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -283,9 +281,4 @@ header{
 
 .contato span {
     padding: 0px 6px;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
 }

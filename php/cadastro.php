@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Carrega o arquivo de dados JSON
-    $arq_dados = __DIR__ . '/../data/usuarios.json';
+    $arq_dados = __DIR__ . '/../dados/usuarios.json';
     $dados = file_exists($arq_dados) ? json_decode(file_get_contents($arq_dados), true) : [];
 
     // Verifica se o email já está cadastrado
@@ -42,9 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'senha' => $senha
     ];
 
-    // Salva os dados atualizados no JSON
-    file_put_contents($arq_dados, json_encode($dados));
-
-    echo "<div style='color:green;'>Cadastro realizado com sucesso!</div>";
+    if (file_put_contents($arq_dados, json_encode($dados)) === false) {
+        echo "<div style='color:red;'>Erro ao salvar os dados. Tente novamente.</div>";
+    } else {
+        echo "<div style='color:green;'>Cadastro realizado com sucesso!</div>";
+    }
 }
 ?>
