@@ -282,3 +282,8 @@ header{
 .contato span {
     padding: 0px 6px;
 }
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
