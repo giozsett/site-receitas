@@ -255,8 +255,12 @@ article {
     background-color: rgba(238, 238, 238, 0.8);
 }
 
-.w1-result-peso {
-    
+.w1-result-perna {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
 }
 
 .wrapper2 {
@@ -318,6 +322,38 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.5);
+}
+
+.w3-result-peso {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w3-result-braco {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w3-result-cintura {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w3-result-perna {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
 }
 
 .btn-enviar {
