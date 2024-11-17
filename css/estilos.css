@@ -229,6 +229,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w1-result-peso {
@@ -237,6 +238,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w1-result-braco {
@@ -245,6 +247,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w1-result-cintura {
@@ -253,6 +256,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w1-result-perna {
@@ -261,6 +265,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .wrapper2 {
@@ -318,7 +323,11 @@ article {
 }
 
 .w3-result {
-    width: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+    width: 90px;
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.5);
@@ -330,6 +339,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w3-result-braco {
@@ -338,6 +348,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w3-result-cintura {
@@ -346,6 +357,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .w3-result-perna {
@@ -354,6 +366,7 @@ article {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(238, 238, 238, 0.8);
+    padding: 5px;
 }
 
 .btn-enviar {
@@ -362,6 +375,7 @@ article {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    padding: 5px;
 }
 
 .btn-enviar input[type="submit"] {

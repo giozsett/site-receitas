@@ -1,52 +1,78 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // URL do arquivo JSON (ajuste conforme o caminho correto)
-    const urlMetas = "../dados/usuarios_metas.json";
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para carregar os dados do arquivo JSON
+    function carregarDadosMetas() {
+        // Email do usuário obtido da sessão PHP
+        const emailUsuario = document.getElementById('usuarioEmail').getAttribute('data-email');
+        
+        // Caminho para o arquivo JSON
+        const arquivoMetas = 'dados/usuarios_metas.json';
 
-    // Email do usuário logado (simulado pela sessão no servidor, deve ser retornado no HTML ou via API)
-    const emailUsuario = document.body.dataset.email; // Supondo que o email venha do PHP como atributo no body
+        // Fazer a requisição para obter o conteúdo do arquivo JSON
+        fetch(arquivoMetas)
+            .then(response => response.json())
+            .then(dadosMetas => {
+                if (dadosMetas[emailUsuario]) {
+                    // Pegar o último registro do usuário
+                    const ultimoRegistro = dadosMetas[emailUsuario][dadosMetas[emailUsuario].length - 1];
 
-    if (!emailUsuario) {
-        console.error("Erro: Email do usuário não encontrado na sessão.");
-        return;
+                    // Exibir os dados do último registro nas divs w1-result
+                    document.querySelector('.w1-result-peso').innerText = ultimoRegistro.peso;
+                    document.querySelector('.w1-result-braco').innerText = ultimoRegistro.braco;
+                    document.querySelector('.w1-result-cintura').innerText = ultimoRegistro.cintura;
+                    document.querySelector('.w1-result-perna').innerText = ultimoRegistro.perna;
+
+                    // Verificar se há um registro anterior para comparação
+                    if (dadosMetas[emailUsuario].length > 1) {
+                        const penultimoRegistro = dadosMetas[emailUsuario][dadosMetas[emailUsuario].length - 2];
+
+                        // Exibir os dados do registro anterior nas divs w3-result
+                        document.querySelector('.w3-result').innerText = penultimoRegistro.data;
+                        document.querySelector('.w3-result-peso').innerText = penultimoRegistro.peso;
+                        document.querySelector('.w3-result-braco').innerText = penultimoRegistro.braco;
+                        document.querySelector('.w3-result-cintura').innerText = penultimoRegistro.cintura;
+                        document.querySelector('.w3-result-perna').innerText = penultimoRegistro.perna;
+
+                        // Comparar os dados atuais com o registro anterior
+                        compararDados(ultimoRegistro, penultimoRegistro);
+                    }
+                } else {
+                    console.log("Nenhum dado encontrado para o usuário.");
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao carregar os dados:', error);
+            });
     }
 
-    // Função para buscar os dados do JSON
-    fetch(urlMetas)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao carregar o arquivo JSON.");
-            }
-            return response.json();
-        })
-        .then(dados => {
-            if (!dados[emailUsuario]) {
-                console.warn("Nenhum dado encontrado para o usuário:", emailUsuario);
-                return;
-            }
+    // Função para comparar os dados
+    function compararDados(ultimoRegistro, penultimoRegistro) {
+        // Comparações para as divs w1-result (dados atuais)
+        compararValores('peso', ultimoRegistro.peso, penultimoRegistro.peso);
+        compararValores('braco', ultimoRegistro.braco, penultimoRegistro.braco);
+        compararValores('cintura', ultimoRegistro.cintura, penultimoRegistro.cintura);
+        compararValores('perna', ultimoRegistro.perna, penultimoRegistro.perna);
+    }
 
-            // Obtem o último registro do usuário
-            const metasUsuario = dados[emailUsuario];
-            const ultimaMeta = metasUsuario[metasUsuario.length - 1];
+    // Função para comparar um valor
+    function compararValores(nome, valorAtual, valorAnterior) {
+        const divResult = document.querySelector(`.w1-result-${nome}`);
+        const divAnterior = document.querySelector(`.w3-result-${nome}`);
+        let dataAnterior = document.querySelector(`.w3-result`);
 
-            // Preenche os campos de w1-result
-            const w1Elements = document.querySelectorAll(".w1-result");
-            w1Elements[0].textContent = ultimaMeta.peso || "N/A";
-            w1Elements[1].textContent = ultimaMeta.braco || "N/A";
-            w1Elements[2].textContent = ultimaMeta.cintura || "N/A";
-            w1Elements[3].textContent = ultimaMeta.perna || "N/A";
+        if (valorAtual !== valorAnterior) {
+            divResult.style.color = '#000';
+            divAnterior.style.color = '#000';
+            dataAnterior.style.color = '#000';
+        }
+    }
 
-            // Preenche os campos de w3-result
-            const w3Elements = document.querySelectorAll(".w3-result");
-            w3Elements[0].textContent = ultimaMeta.data || "N/A";
-            w3Elements[1].textContent = ultimaMeta.peso || "N/A";
-            w3Elements[2].textContent = ultimaMeta.braco || "N/A";
-            w3Elements[3].textContent = ultimaMeta.cintura || "N/A";
-            w3Elements[4].textContent = ultimaMeta.perna || "N/A";
-        })
-        .catch(error => {
-            console.error("Erro ao processar os dados:", error);
-        });
+    // Carregar os dados ao carregar a página
+    carregarDadosMetas();
 });
+
+
+
+
 
 
 
