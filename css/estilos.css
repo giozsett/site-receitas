@@ -269,7 +269,7 @@ article {
 }
 
 .wrapper2 {
-    width: 400px;
+    width: 350px;
     background-color: rgba(221, 243, 244, 0.4);
     padding: 20px;
     border-radius: 5px;
@@ -576,7 +576,7 @@ article {
 }
 
 .perfil-menu {
-    width: 250px;
+    width: 220px;
     padding: 10px;
     font-family: 'Jost';
     background: -webkit-radial-gradient(circle, #30acb0 0%, #278699 100%);
