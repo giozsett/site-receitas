@@ -10,6 +10,13 @@ $conteudo_pagina_metas = file_get_contents(__DIR__ . '/../html/metas.html');
 echo $conteudo_pagina_metas;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se o usuário está logado
+    if (!isset($_SESSION['email'])) {
+        echo "Erro: Usuário não está logado.";
+        exit();
+    }
+    $emailUsuario = $_SESSION['email'];
+
     // Caminho para o arquivo de metas
     $arquivoMetas = __DIR__ . '/../dados/usuarios_metas.json';
 
@@ -27,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dadosMetas = json_decode($conteudoAtual, true) ?? [];
     }
 
+    // Nova meta do usuário
     $novaMeta = [
         'data' => $dataAtual,
         'peso' => $pesoAtual ?: null,
@@ -34,34 +42,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'cintura' => $cinturaAtual ?: null,
         'perna' => $pernaAtual ?: null,
     ];
-    
-    // Verifica se o ID já existe no JSON
-    if (!isset($dadosMetas[$usuarioId])) {
-        $dadosMetas[$usuarioId] = [];
-    }
-    
-    // Adiciona as novas metas no array do usuário
-    $dadosMetas[$usuarioId][] = $novaMeta;
 
-    if (isset($_SESSION['usuario_id'])) {
-        $usuarioId = $_SESSION['usuario_id'];
-    } else {
-        echo "Erro: Usuário não está logado.";
-        exit();
+    // Adiciona as metas ao email do usuário no array
+    if (!isset($dadosMetas[$emailUsuario])) {
+        $dadosMetas[$emailUsuario] = [];
     }
-
-    $usuarioId = $_SESSION['usuario_id'];
-    
+    $dadosMetas[$emailUsuario][] = $novaMeta;
 
     // Salvar os dados atualizados no JSON
     if (file_put_contents($arquivoMetas, json_encode($dadosMetas, JSON_PRETTY_PRINT)) !== false) {
         // Redirecionar para evitar reenvio do formulário
-        header("Location: metas.php");
+        //header("Location: metas.php");
         exit();
     } else {
         echo "Erro ao salvar os dados.";
     }
 }
 ?>
+
 
 

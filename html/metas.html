@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body data-email="<?php echo $_SESSION['email']; ?>">
     <div class="topo">
         <div class="logo">
             green fit
@@ -32,30 +32,30 @@
 
             <form action="index.php?pagina=metas" method="post">
                 <div class="wrapper1">
-                    <h3>Diferença do último mês</h3>
+                    <h3>Diferença do último registro</h3>
                     <table>
                         <tr>
                             <td>Peso (kg): </td>
                                 <td>
-                                    <div class="w1-result"></div>
+                                    <div class="w1-result-peso"></div>
                                 </td>
                         </tr>
                         <tr>
                             <td>Braço (cm):</td>
                             <td>
-                                <div class="w1-result"></div>
+                                <div class="w1-result-braco"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>Cintura (cm):</td>
                             <td>
-                                <div class="w1-result"></div>
+                                <div class="w1-result-cintura"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>Perna (cm):</td>
                             <td>
-                                <div class="w1-result"></div>
+                                <div class="w1-result-perna"></div>
                             </td>
                         </tr>
                     </table>
@@ -109,25 +109,25 @@
                         <tr>
                             <td>Peso (kg): </td>
                             <td> 
-                                <div class="w3-result"></div>
+                                <div class="w3-result-peso"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>Braço (cm):</td>
                             <td> 
-                                <div class="w3-result"></div>
+                                <div class="w3-result-braco"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>Cintura (cm):</td>
                             <td> 
-                                <div class="w3-result"></div>
+                                <div class="w3-result-cintura"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>Perna (cm):</td>
                             <td> 
-                                <div class="w3-result"></div>
+                                <div class="w3-result-perna"></div>
                             </td>
                     </table>
                 </div>

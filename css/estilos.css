@@ -231,6 +231,34 @@ article {
     background-color: rgba(238, 238, 238, 0.8);
 }
 
+.w1-result-peso {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w1-result-braco {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w1-result-cintura {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+
+.w1-result-peso {
+    
+}
+
 .wrapper2 {
     width: 400px;
     background-color: rgba(221, 243, 244, 0.4);

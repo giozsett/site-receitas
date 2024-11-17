@@ -1,1 +1,18 @@
-{}
+{
+    "admin@gmail.com": [
+        {
+            "data": "2024-11-17",
+            "peso": "77",
+            "braco": "33",
+            "cintura": "77",
+            "perna": "55"
+        },
+        {
+            "data": "2024-11-19",
+            "peso": "77",
+            "braco": "31",
+            "cintura": "71",
+            "perna": "56"
+        }
+    ]
+}
