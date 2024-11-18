@@ -29,5 +29,81 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+h1 {
+  width: 100%;
+  padding: 5px 10px;
+  font-family: 'Jost';
+  font-weight: bold;
+  color: #f5f5f5;
+  font-size: 22px;
+}
+
+.resultado {
+  font-family: 'Open Sans';
+  color: #fff;
+}
+
+#calcularBtn {
+  margin: 10px 20px;
+  padding: 5px;
+}
+
+.editar-cadastro {
+  padding: 20px 10px;
+}
+
+.editar-cadastro label {
+  font-family: 'Open Sans';
+  color: #fff;
+  margin: 0px 0px 0px 15px;
+}
+
+.editar-cadastro input {
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border-style: none;
+  margin: 5px 0px 10px;
+}
+
+.btn-confirmar {
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.btn-confirmar input[type="submit"] {
+  height: 40px;
+  margin-top: 25px;
+  padding: 5px 15px;
+  transition: all 0.4s linear;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 2px 2px rgb(0, 0, 0, 0.6);
+  font-family: 'Jost';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-confirmar input[type="submit"]:hover {
+  padding: 7px 18px;
+  box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
+  background: radial-gradient(circle, rgba(59,213,218,1) 0%, rgba(54,168,172,1) 35%, rgba(31,100,114,1) 100%);
+  cursor: pointer;
+}
+
+
+/*PERFIL --> MINHA DIETA*/
+.perfil-texto {
+  font-family: 'Open Sans';
+  color: #eee;
+  text-align: justify;
+  margin: 20px 10px 10px 10px;
 }
