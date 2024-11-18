@@ -30,5 +30,29 @@
             "cintura": "88",
             "perna": "55"
         }
+    ],
+    "3": {
+        "altura": null,
+        "peso": null,
+        "cintura": null,
+        "braco": null,
+        "perna": null,
+        "data": "2024-11-18"
+    },
+    "gio@gmail.com": [
+        {
+            "data": "2024-11-16",
+            "peso": "77",
+            "braco": "35",
+            "cintura": "90",
+            "perna": "65"
+        },
+        {
+            "data": "2024-11-17",
+            "peso": "76",
+            "braco": "34",
+            "cintura": "90",
+            "perna": "65"
+        }
     ]
 }
